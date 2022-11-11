@@ -1,0 +1,26 @@
+<!-- interpolation  -->
+{{title}}
+<!-- directive:fonctionnalité predefinie :ngfor/ngif -->
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Like</th>
+        <th>Action</th>
+
+    </tr>
+    <tr *ngFor="let p of productList">
+        <td>{{p.id}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.quantity}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.like}}</td>
+        <td>
+            <button (click)="Buy(p.id)" [disabled]="p.quantity==0">Buy</button>
+            <button (click)="Like(p.id)">Like</button>
+        </td>
+        <td *ngIf="p.like>=10">Best Product</td>
+    </tr>
+</table>
