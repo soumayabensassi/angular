@@ -8,6 +8,8 @@ import { ProductsComponent } from './products/products.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OffreemploiComponent } from './offreemploi/offreemploi.component';
 import { FormsModule } from '@angular/forms';
+import { FormProductsComponent } from './form-products/form-products.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     ProductsComponent,
     NavbarComponent,
-    OffreemploiComponent
+    OffreemploiComponent,
+    FormProductsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
