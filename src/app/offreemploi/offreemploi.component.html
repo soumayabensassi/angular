@@ -3,11 +3,10 @@
 <!-- directive:fonctionnalité predefinie :ngfor/ngif -->
 <table border="1">
     <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        
+        <th>reference</th>
+        <th>titre</th>
+        <th>entreprise</th>
+        <th>etat</th>
         <th>Action</th>
 
     </tr>
@@ -22,3 +21,12 @@
         </td>
     </tr>
 </table>
+<button (click)="Bilan2()">Bilan</button>
+<div *ngIf="test==true">
+        {{nombre}}
+</div>
+<br>
+<input [(ngModel)]="textsearch" name="search">
+<button (click)="Search()">
+    Search
+</button>
