@@ -1,11 +1,29 @@
 <form>
-    <label>id</label>
-    <input placeholder="id"><br>
+    <div class="form_group">
+    
     <label>title</label>
-    <input placeholder="title"><br>
-    <label>quantity</label>
-    <input placeholder="quantity"><br>
-    <label>price</label>
-    <input placeholder="price"><br>
-   
+    <br>
+    <input class="form-control" type="text" name="title" placeholder="title" [(ngModel)]="product.title"><br>
+</div>
+<div class="form_group">
+    <label>Quantity</label>
+    <br>
+    <input class="form-control" type="text" name="quantity"  placeholder="quantity" [(ngModel)]="product.quantity"><br>
+</div>
+ <div class="form_group">
+    <label>Price</label>
+    <br>
+    <input  class="form-control" type="text" name="price" placeholder="price" [(ngModel)]="product.price"><br>
+</div>
+<div class="form_group">
+    <label>Picture:</label>
+    <br>
+    <input class="form-control" type="text" name="Picture" placeholder="Picture" [(ngModel)]="product.picture"><br>
+</div>
+<div class="form-group"> 
+    <input type="submit" class="btn btn-primary"    value="Save">
+</div>
 </form>
+{{product.title}}<br>
+{{product.price}}<br>
+{{product.quantity}}
