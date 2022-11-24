@@ -10,6 +10,7 @@ import { OffreemploiComponent } from './offreemploi/offreemploi.component';
 import { FormsModule } from '@angular/forms';
 import { FormProductsComponent } from './form-products/form-products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavbarComponent,
     OffreemploiComponent,
     FormProductsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
