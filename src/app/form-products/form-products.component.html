@@ -1,28 +1,48 @@
-<form>
+<form (ngSubmit)="ajouter()" #form="ngForm">
     <div class="form_group">
-    
-    <label>title</label>
-    <br>
-    <input class="form-control" type="text" name="title" placeholder="title" [(ngModel)]="product.title"><br>
-</div>
-<div class="form_group">
-    <label>Quantity</label>
-    <br>
-    <input class="form-control" type="text" name="quantity"  placeholder="quantity" [(ngModel)]="product.quantity"><br>
-</div>
- <div class="form_group">
-    <label>Price</label>
-    <br>
-    <input  class="form-control" type="text" name="price" placeholder="price" [(ngModel)]="product.price"><br>
-</div>
-<div class="form_group">
-    <label>Picture:</label>
-    <br>
-    <input class="form-control" type="text" name="Picture" placeholder="Picture" [(ngModel)]="product.picture"><br>
-</div>
-<div class="form-group"> 
-    <input type="submit" class="btn btn-primary"    value="Save">
-</div>
+
+        <label>title</label>
+        <br>
+        <input class="form-control" type="text" name="title" #title="ngModel" [(ngModel)]="product.title" required
+            minlength="3"><br>
+
+        <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
+            <div *ngIf="title.errors?.['required']">title is required</div>
+            <div *ngIf="title.errors?.['minlength']">title must have 3 caracters </div>
+        </div>
+    </div>
+    <div class="form_group">
+        <label>Quantity</label>
+        <br>
+        <input class="form-control" type="number" name="quantity" #quantity="ngModel" placeholder="quantity" [(ngModel)]="product.quantity"
+            required min="0"><br>
+            <div class="alert alert-danger" *ngIf="quantity.touched && quantity.invalid">
+                <div *ngIf="quantity.errors?.['required']">quantity is required</div>
+                <div *ngIf="quantity.errors?.['min']">quantity min 0 </div>
+            </div>
+    </div>
+    <div class="form_group">
+        <label>Price</label>
+        <br>
+        <input class="form-control" type="number" name="price" placeholder="price" #price="ngModel"  [(ngModel)]="product.price" required
+            min="0"><br>
+            <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
+                <div *ngIf="price.errors?.['required']">price is required</div>
+                <div *ngIf="price.errors?.['min']">price min 0 </div>
+            </div>
+    </div>
+    <div class="form_group">
+        <label>Picture:</label>
+        <br>
+        <input class="form-control" type="text" name="Picture" placeholder="Picture "#picture="ngModel"  [(ngModel)]="product.picture"
+            required><br>
+            <div class="alert alert-danger" *ngIf="picture.touched && picture.invalid">
+                <div *ngIf="picture.errors?.['required']">Picture is required</div>
+            </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" [disabled]="form.invalid" value="Save">
+    </div>
 </form>
 {{product.title}}<br>
 {{product.price}}<br>

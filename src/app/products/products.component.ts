@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../core/products';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-products',
@@ -9,14 +10,10 @@ import { Product } from '../core/products';
 export class ProductsComponent implements OnInit {
   title:string="welcome to products page!"
   productList!:Product[];
-  constructor() { }
+  constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
-this.productList=[
-{id:1,title:"T-shirt 1",price:18,quantity:0,like:0,picture:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bershka.com%2Ffr%2Fhomme%2Fv%25C3%25AAtements%2Ftee-shirts-c1010193239.html&psig=AOvVaw0EgeUbg2Isr59QwYWBeDmH&ust=1668172621726000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPiD3bTZo_sCFQAAAAAdAAAAABAE"},
-{id:2,title:"T-shirt 2",price:21,quantity:10,like:0,picture:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bershka.com%2Ffr%2Fhomme%2Fv%25C3%25AAtements%2Ftee-shirts-c1010193239.html&psig=AOvVaw0EgeUbg2Isr59QwYWBeDmH&ust=1668172621726000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPiD3bTZo_sCFQAAAAAdAAAAABAE"},
-{id:3,title:"T-shirt 3",price:16,quantity:8,like:0,picture:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bershka.com%2Ffr%2Fhomme%2Fv%25C3%25AAtements%2Ftee-shirts-c1010193239.html&psig=AOvVaw0EgeUbg2Isr59QwYWBeDmH&ust=1668172621726000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPiD3bTZo_sCFQAAAAAdAAAAABAE"}
-];
+this.productList=this.productService.productListServices;
   }
   Buy(id:number)
 {
