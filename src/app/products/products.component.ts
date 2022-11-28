@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../core/products';
+import { CalculServiceService } from '../services/calcul-service.service';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ProductService } from '../services/product.service';
 export class ProductsComponent implements OnInit {
   title:string="welcome to products page!"
   productList!:Product[];
-  constructor(private productService:ProductService) { }
+  constructor(private productService:ProductService,private calcul:CalculServiceService) { }
 
   ngOnInit(): void {
 this.productList=this.productService.productListServices;
@@ -34,5 +35,10 @@ if(this.productList[i].id==id)
   this.productList[i].like++;
 }
 }
+}
+num!:number;
+verif()
+{
+this.num=this.calcul.getNumberOf(this.productList,"quantity",0)
 }
 }

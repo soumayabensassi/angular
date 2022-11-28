@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { FormProductsComponent } from './form-products/form-products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { TodoListComponentComponent } from './todo-list-component/todo-list-component.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     OffreemploiComponent,
     FormProductsComponent,
     NotFoundComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    TodoListComponentComponent
   ],
   imports: [
     BrowserModule,
