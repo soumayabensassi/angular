@@ -2,7 +2,7 @@
 <h5 class="title">{{title}}</h5>
 <!-- directive:fonctionnalité predefinie :ngfor/ngif -->
 <div class="d-flex flex-row">
-        <div class="card" style="width: 18rem;" *ngFor="let p of productList">
+        <div class="card" style="width: 24rem;" *ngFor="let p of productList">
             <img src={{p.picture}} class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{p.title}}</h5>
@@ -14,7 +14,10 @@
               <button class="btn btn-primary" [routerLink]="['/product',p.id]">
                 show details
             </button>
-            
+            <button class="btn btn-primary"  (click)="Delete(p.id)">Delete</button>
+            <button class="btn btn-primary" [routerLink]="['/updateProducts',p.id]">
+             Modifier
+          </button>
             <td *ngIf="p.like>=10">Best Product</td>
             </div>
           </div>

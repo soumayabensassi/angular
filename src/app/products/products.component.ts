@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../core/products';
 import { CalculServiceService } from '../services/calcul-service.service';
+import { ConsumerService } from '../services/consumer.service';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -11,10 +13,15 @@ import { ProductService } from '../services/product.service';
 export class ProductsComponent implements OnInit {
   title:string="welcome to products page!"
   productList!:Product[];
-  constructor(private productService:ProductService,private calcul:CalculServiceService) { }
+  constructor(private productService:ProductService,private calcul:CalculServiceService,private consumer:ConsumerService,private route:Router) { }
 
   ngOnInit(): void {
-this.productList=this.productService.productListServices;
+this.consumer.getProducts().subscribe(
+{  next:(data)=>this.productList=data,
+ error:(error)=>console.log(error)
+ 
+}
+);
   }
   Buy(id:number)
 {
@@ -40,5 +47,9 @@ num!:number;
 verif()
 {
 this.num=this.calcul.getNumberOf(this.productList,"quantity",0)
+}
+Delete(id:number)
+{
+this.consumer.deleteProduct(id).subscribe(()=>this.productList=this.productList.filter((p)=>p.id != id))
 }
 }

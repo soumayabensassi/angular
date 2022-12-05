@@ -9,4 +9,4 @@ i:number=0;
   getNumberOf(list:any[], critiria:string, value:any){
 return list.filter((o)=>o[critiria]==value).length;
 }
-}
+}                                  

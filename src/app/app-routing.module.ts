@@ -8,7 +8,7 @@ import { ProductsComponent } from './products/products.component';
 import { TodoListComponentComponent } from './todo-list-component/todo-list-component.component';
 
 const routes: Routes = [{path:'Products',component:ProductsComponent},
-{path:'offre',component:OffreemploiComponent},{path:'addProducts',component:FormProductsComponent},
+{path:'offre',component:OffreemploiComponent},{path:'addProducts',component:FormProductsComponent},{path:'updateProducts/:id',component:FormProductsComponent},
 {path:'product/:id',component:ProductDetailsComponent},{path:'todo',component:TodoListComponentComponent},
 {path:'',redirectTo:'Products',pathMatch:'full'},
 {path:'**',component:NotFoundComponent}];
