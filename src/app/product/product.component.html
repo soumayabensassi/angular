@@ -1,0 +1,18 @@
+<img src={{p.picture}} class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{p.title}}</h5>
+            <h4 class="card-title">{{p.price}}DT</h4>
+            <p class="card-text">Quantity :{{p.quantity}}</p>
+            <p class="card-text">{{p.like}}</p>
+            <!-- <button class="btn btn-primary" (click)="Buy(p.id)" [disabled]="p.quantity==0">Buy</button>
+            <button class="btn btn-primary" (click)="Like(p.id)">Like</button>
+            <button class="btn btn-primary" [routerLink]="['/product',p.id]">
+              show details
+          </button>
+        
+          <button class="btn btn-primary" [routerLink]="['/updateProducts',p.id]">
+           Modifier
+        </button> -->
+        <button class="btn btn-primary"  (click)="Delete()">Delete</button>
+          <td *ngIf="p.like>=10">Best Product</td>
+          </div>

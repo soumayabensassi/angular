@@ -13,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { TodoListComponentComponent } from './todo-list-component/todo-list-component.component';
 import {HttpClientModule} from  '@angular/common/http';
+import { ProductComponent } from './product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import {HttpClientModule} from  '@angular/common/http';
     NotFoundComponent,
     ProductDetailsComponent,
     TodoListComponentComponent,
+    ProductComponent,
     
   ],
   imports: [

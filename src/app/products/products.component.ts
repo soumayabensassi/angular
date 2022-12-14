@@ -48,7 +48,7 @@ verif()
 {
 this.num=this.calcul.getNumberOf(this.productList,"quantity",0)
 }
-Delete(id:number)
+delete(id:any)
 {
 this.consumer.deleteProduct(id).subscribe(()=>this.productList=this.productList.filter((p)=>p.id != id))
 }
